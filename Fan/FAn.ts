@@ -7,7 +7,7 @@ class FAN {
 
     private speed: number;
     private on: boolean;
-    private radius: number;
+    private radius:number ;
     private color: string;
 
     constructor(speed: number, on: boolean, radius: number, color: string) {
@@ -26,42 +26,42 @@ class FAN {
         this.radius = 5;
     }
 
-    public get Speed(): number {
+    getSpeed(): number {
         return this.speed
     }
 
-    public get On(): boolean {
-        return this.on
-    }
-
-    public get Color(): string {
-        return this.color
-    }
-
-    public get Radius(): number {
-        return this.radius
-    }
-
-    public set Speed(value: number) {
+    setSpeed(value: number) {
         this.speed = value
     }
 
-    public set On(value: boolean) {
+    getOn(): boolean {
+        return this.on
+    }
+
+    setOn(value: boolean) {
         this.on = value
     }
 
-    public set Color(value: string) {
-        this.color = value
+    getRadius(): number {
+        return this.radius
     }
 
-    public set Radius(value: number) {
+    setRadius(value: number) {
         this.radius = value
     }
 
-    public toString() {
-        if (this.on) {
-            return `fan is on ,speed :${this.speed},color${this.Color},radius :${this.radius}`
-        } else return 'fan is off'
-
+    getColor(): string {
+        return this.color
     }
-}
+
+    setColor(value: string) {
+        this.color = value
+    }public  toString(){
+        if(this.on) {
+            return `fan is on ,speed: ${this.speed},color: ${this.color},radius :${this.color}`
+        }else return `fan is off`
+    }
+}let fan1 =new FAN(FAST,true,10,'yellow')
+console.log(fan1.toString());
+let fan2=new FAN(MEDIUM,false,5,'blue')
+console.log(fan2.toString());
